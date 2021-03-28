@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">TestDagger2Modules</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="login_fragment_label">Login Fragment View: </string>
+    <string name="main_view_fragment_label">MainView Fragment</string>
+    <string name="forgot_password_fragment_label">Forgot Password</string>
+    <string name="start_training_fragment_label">Start Training Fragment</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="start_training">Start TrainingSession</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_details_fragment_header">Enter Registration Details</string>
+
+    <string name="list_item_training_session_header">Trainingsession</string>
+    <string name="list_item_subheader">Date: %s</string>
+    <string name="list_item_sessionItem">SessionId: %s</string>
+    <string name="list_item_label">Modelname used</string>
+    <string name="title_activity_registration">RegistrationActivity</string>
+    <string name="title_enter_details_registration">Enter Registration Details</string>
+    <string name="title_terms_and_conditions_registration">Terms and Conditions Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="title_login_fragment">Login Fragment: </string>
+    <string name="login_header">Login here:</string>
+    <string name="title_activity_login">Login2Activity</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+
+
+    <string name="item_training_session_version_text_template">Version: %1$s</string>
+
+    <string name="list_item_training_header">Training</string>
+
+
+
+</resources>

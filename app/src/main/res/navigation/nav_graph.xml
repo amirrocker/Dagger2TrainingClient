@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainViewFragment">
+
+    <fragment
+        android:id="@+id/MainViewFragment"
+        android:name="de.amirrocker.testdagger2modules.home.presentation.MainViewFragment"
+        android:label="@string/main_view_fragment_label"
+        tools:layout="@layout/fragment_main_view">
+
+    </fragment>
+</navigation>

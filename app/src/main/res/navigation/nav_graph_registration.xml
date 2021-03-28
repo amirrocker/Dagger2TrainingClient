@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/RegistrationEnterDetailsFragment">
+
+    <fragment
+        android:id="@+id/RegistrationEnterDetailsFragment"
+        android:name="de.amirrocker.testdagger2modules.registration.EnterDetailsFragment"
+        android:label="@string/title_enter_details_registration"
+        tools:layout="@layout/fragment_registration_enter_details">
+
+        <action
+            android:id="@+id/action_EnterDetailsRegistrationFragment_to_TermsAndConditionsFragment"
+            app:destination="@id/TermsAndConditionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/TermsAndConditionsFragment"
+        android:name="de.amirrocker.testdagger2modules.registration.TermsAndConditionsFragment"
+        android:label="@string/title_terms_and_conditions_registration"
+        tools:layout="@layout/fragment_terms_and_conditions">
+
+        <action
+            android:id="@+id/action_TermsAndConditionsFragment_to_EnterDetailsRegistrationFragment"
+            app:destination="@id/RegistrationEnterDetailsFragment" />
+    </fragment>
+</navigation>

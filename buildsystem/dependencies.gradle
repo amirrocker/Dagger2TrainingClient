@@ -1,0 +1,131 @@
+allprojects {
+    repositories {
+        google()
+//        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+ext {
+    // Libraries
+    rxJava2 = '2.1.0'
+    rxAndroid = '2.0.1'
+    coreKtx = '1.3.2'
+    architectureComponents = '1.0.0'
+    room = '1.0.0'
+    androidxAppCompat = '1.2.0'
+    supportLibrary = '27.0.2'
+    constraintLayout = '1.0.2'
+    androidxConstraintLayout = '2.0.4'
+    dagger2 = '2.28.3'
+    javaxAnnotation = '10.0-b28'
+    picasso = '2.5.2'
+    calligraphy = '2.3.0'
+    lottie = '2.0.0'
+    okHttp = '3.8.0'
+    retrofit2 = '2.3.0'
+    gson = '2.8.1'
+    autoValue = '1.7.4'
+    autoValueGson = '1.3.1'
+    options = '1.3.0'
+    cardView = '1.0.0'
+
+    // Instrumentation
+    stetho = '1.5.0'
+    chuck = '1.0.4'
+    leakCanary = '1.5.1'
+
+    // Testing
+    junit = '4.12'
+    mockito = '2.8.9'
+    assertJ = '3.8.0'
+
+    commonDependencies = [
+            rxJava2                         : "io.reactivex.rxjava2:rxjava:${rxJava2}",
+            rxAndroid                       : "io.reactivex.rxjava2:rxandroid:${rxAndroid}",
+
+            dagger2Compiler                 : "com.google.dagger:dagger-compiler:${dagger2}",
+            dagger2                         : "com.google.dagger:dagger:${dagger2}",
+            javaxAnnotation                 : "org.glassfish:javax.annotation:${javaxAnnotation}",
+
+            kotlinStdLib                    : "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}",
+            coreKtx                         : "androidx.core:core-ktx:${coreKtx}",
+
+            androidxAppCompat               : "androidx.appcompat:appcompat:1.2.0",
+            material                        : "com.google.android.material:material:1.3.0",
+
+            navigationFragmentKtx           : "androidx.navigation:navigation-fragment-ktx:2.3.3",
+
+            navigationUiKtx                 : "androidx.navigation:navigation-ui-ktx:2.3.3",
+            legacySupportV4                 : "androidx.legacy:legacy-support-v4:1.0.0",
+
+
+            supportAnnotation               : "com.android.support:support-annotations:${supportLibrary}",
+
+            supportCardView                 : "com.android.support:cardview-v7:${supportLibrary}",
+            supportRecyclerView             : "com.android.support:recyclerview-v7:${supportLibrary}",
+            constraintLayout                : "com.android.support.constraint:constraint-layout:${constraintLayout}",
+
+            androidxConstraintLayout        : "androidx.constraintlayout:constraintlayout:${androidxConstraintLayout}",
+            cardView                        : "androidx.cardview:cardview:${cardView}",
+
+            calligraphy                     : "uk.co.chrisjenx:calligraphy:${calligraphy}",
+
+            roomRuntime                     : "android.arch.persistence.room:runtime:${room}",
+            roomCompiler                    : "android.arch.persistence.room:compiler:${room}",
+            roomTesting                     : "android.arch.persistence.room:testing:${room}",
+
+            architectureComponentsExtensions: "android.arch.lifecycle:extensions:${architectureComponents}",
+            architectureComponentsCompiler  : "android.arch.lifecycle:compiler:${architectureComponents}",
+
+            autoValue                       : "com.google.auto.value:auto-value:${autoValue}",
+            autoValueGson                   : "com.ryanharter.auto.value:auto-value-gson:${autoValueGson}",
+
+            options                         : "com.github.tomaszpolanski:options:${options}",
+
+            lottie                          : "com.airbnb.android:lottie:${lottie}",
+
+            okHttp                          : "com.squareup.okhttp3:okhttp:${okHttp}",
+            okHttpInterceptor               : "com.squareup.okhttp3:logging-interceptor:${okHttp}",
+            picasso                         : "com.squareup.picasso:picasso:${picasso}",
+
+            retrofit2                       : "com.squareup.retrofit2:retrofit:${retrofit2}",
+            retrofitRxAdapter               : "com.squareup.retrofit2:adapter-rxjava2:${retrofit2}",
+            retrofitConverter               : "com.squareup.retrofit2:converter-gson:${retrofit2}",
+
+            gson                            : "com.google.code.gson:gson:${gson}",
+
+            /**
+             * || AAChart is a charting library with a kotlin port - @see https://github.com/AAChartModel/AAChartCore-Kotlin    ||
+             * || remember the proguard line : -keep class com.github.aachartmodel.aainfographics.* { *; }                      ||
+             * || There are 2+ really good reasons to use this plot library - it is open source and easily understood and       ||
+             * || there are different ports for java, kotlin, swift and even a very good(?) objective-C implementation.         ||
+             * || And the library as far as I was able to use it was easy to implement and worked well. After experiences       ||
+             * || with a number of other android plot libs this felt refreshing.                                                ||
+             */
+            aaChartPlot                     : "com.github.AAChartModel:AAChartCore-Kotlin:-SNAPSHOT"    // no version ?!
+    ]
+
+    commonTestDependencies = [
+            junit                        : "junit:junit:${junit}",
+            assertj                      : "org.assertj:assertj-core:${assertJ}",
+            mockito                      : "org.mockito:mockito-core:${mockito}",
+            architectureComponentsTesting: "android.arch.core:core-testing:${architectureComponents}",
+    ]
+
+    instrumentationTestDependencies = [
+            androidx                     : "androidx.test.ext:junit:1.1.2",
+            espressoCore                 : "androidx.test.espresso:espresso-core:3.3.0",
+    ]
+
+    developmentDependencies = [
+            leakcanary    : "com.squareup.leakcanary:leakcanary-android:${leakCanary}",
+            leakcanaryNoOp: "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanary}",
+
+            stetho        : "com.facebook.stetho:stetho:${stetho}",
+            stethoOkHttp  : "com.facebook.stetho:stetho-okhttp3:${stetho}",
+
+            chuck         : "com.readystatesoftware.chuck:library:${chuck}",
+            chuckNoOp     : "com.readystatesoftware.chuck:library-no-op:${chuck}"
+    ]
+}

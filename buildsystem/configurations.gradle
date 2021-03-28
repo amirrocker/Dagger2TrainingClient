@@ -1,0 +1,13 @@
+ext {
+    android = [
+            buildToolsVersion: "30.0.1",
+            minSdkVersion    : 28,
+            targetSdkVersion : 30,
+            compileSdkVersion: 30
+    ]
+
+    endpoints = [
+            fake_staging_endpoint_url = "\"https://www.definitelynotmydomain-staging.de/api/\"",
+            fake_live_endpoint_url = "\"https://www.definitelynotmydomain-live.de/api/\""
+    ]
+}
