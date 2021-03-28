@@ -8,7 +8,7 @@ class TrainingSessionCardViewEntityMapper @Inject constructor() : Function<Train
 
     override fun apply(t: TrainingSession): TrainingSessionCardViewEntity {
         return TrainingSessionCardViewEntity(
-            t.getVersion(),
+            t.sessionId,
             t.title,
             t.version,
             t.createdAt,

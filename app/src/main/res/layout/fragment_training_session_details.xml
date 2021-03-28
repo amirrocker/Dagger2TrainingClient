@@ -7,41 +7,125 @@
     </data>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".home.presentation.MainViewFragment">
+        android:orientation="vertical"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".home.presentation.MainViewFragment">
 
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Training Session Details"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Training Session Details" />
+                <TextView
+                    android:id="@+id/training_session_details_header"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Training Session Details"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Training Session Details" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_training_session_trainings_list"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:listitem="@layout/item_list_item_training_details"
-            ></androidx.recyclerview.widget.RecyclerView>
+                <TextView
+                    android:id="@+id/tv_training_session_details_sessionId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="SessionID: "
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="48dp"
+                    tools:text="SessionID:" />
+
+                <TextView
+                    android:id="@+id/tv_training_session_details_sessionId_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="ID10"
+                    tools:layout_editor_absoluteX="137dp"
+                    tools:layout_editor_absoluteY="48dp"
+                    tools:text="ID10" />
+
+                <TextView
+                    android:id="@+id/training_session_details_user"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="User:"
+                    tools:layout_editor_absoluteX="238dp"
+                    tools:layout_editor_absoluteY="48dp"
+                    tools:text="User:" />
+
+                <TextView
+                    android:id="@+id/training_session_details_user_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="ID10-User"
+                    tools:layout_editor_absoluteX="317dp"
+                    tools:layout_editor_absoluteY="48dp"
+                    tools:text="ID10-User" />
+
+                <TextView
+                    android:id="@+id/tv_training_session_details_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Title: "
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="114dp"
+                    tools:text="Title" />
+
+                <!-- <androidx.recyclerview.widget.RecyclerView
+                     android:id="@+id/recycler_view_training_session_trainings_list"
+                     android:layout_width="0dp"
+                     android:layout_height="0dp"
+                     android:layout_marginStart="16dp"
+                     android:layout_marginEnd="16dp"
+                     android:layout_marginBottom="16dp"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     tools:listitem="@layout/item_list_item_training_details"></androidx.recyclerview.widget.RecyclerView>-->
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".home.presentation.MainViewFragment">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_training_session_trainings_list"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:listitem="@layout/item_list_item_training_details"></androidx.recyclerview.widget.RecyclerView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 </layout>

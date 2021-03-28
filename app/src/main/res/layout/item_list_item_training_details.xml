@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_item_training"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -60,11 +57,21 @@
                 android:id="@+id/tv_item_training_details_environment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_item_training_header"
-                tools:text="Environment: PongV4" />
+                tools:text="Environment" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_environment_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_environment"
+                tools:text="PongV4" />
 
             <TextView
                 android:id="@+id/tv_item_training_details_title"
@@ -73,7 +80,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_environment"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_createdAt_value"
                 tools:text="Training file: CrossEntropy.py" />
 
             <TextView
@@ -87,25 +94,24 @@
 
 
             <TextView
-                android:id="@+id/tv_item_training_details_description"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_title"
-                tools:text="Long Description Text\nLorem Ipusm non potest" />
-
-            <TextView
                 android:id="@+id/tv_item_training_details_createdAt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                tools:text="CreatedAt: 12.12.2020" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_header"
+                tools:text="CreatedAt:" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_createdAt_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_createdAt"
+                tools:text="12.12.2020" />
 
             <TextView
                 android:id="@+id/tv_item_training_details_executedAt"
@@ -114,7 +120,65 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                tools:text="ExecutedAt: 12.12.2020" />
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toStartOf="@+id/tv_item_training_details_environment"
+                app:layout_constraintStart_toEndOf="@+id/tv_item_training_details_createdAt"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_header"
+                tools:text="ExecutedAt" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_executedAt_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toStartOf="@+id/tv_item_training_details_environment_value"
+                app:layout_constraintStart_toEndOf="@+id/tv_item_training_details_createdAt_value"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_executedAt"
+                tools:text="12.12.2020" />
+
+
+            <!-- <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
+                 android:id="@+id/chv_training_details_plot"
+                 android:layout_width="match_parent"
+                 android:layout_height="0dp"
+                 android:layout_marginStart="8dp"
+                 android:layout_marginTop="8dp"
+                 android:layout_marginEnd="8dp"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_description" />-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_item_training_model_params"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="568dp"
+        android:layout_margin="8dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/iv_training_model_params_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/machine_learning_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_item_training_details_model_params_header"
@@ -122,7 +186,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                app:layout_constraintStart_toEndOf="@+id/iv_training_model_params_icon"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="Model parameters: " />
 
             <TextView
@@ -131,25 +196,224 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                tools:text="Model: Model" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_model_params_header"
+                tools:text="Model:" />
 
-           <!-- <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
-                android:id="@+id/chv_training_details_plot"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+            <TextView
+                android:id="@+id/tv_item_training_details_model_params_model_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_model_params_model"
+                tools:text="Model Value" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_model_params_optimizer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteY="35dp"
+                tools:text="Optimizer:" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_model_params_optimizer_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_model_params_optimizer"
+                tools:text="ADAM Optimizer" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_model_params_loss"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_description" />-->
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toStartOf="@+id/tv_item_training_details_model_params_optimizer"
+                app:layout_constraintStart_toEndOf="@+id/tv_item_training_details_model_params_model"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_model_params_header"
+                tools:text="Loss Function:" />
 
+            <TextView
+                android:id="@+id/tv_item_training_details_model_params_loss_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_horizontal"
+                app:layout_constraintEnd_toStartOf="@+id/tv_item_training_details_model_params_optimizer_value"
+                app:layout_constraintStart_toEndOf="@+id/tv_item_training_details_model_params_model_value"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_model_params_loss"
+                tools:text="Loss function Value" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_hyper_params_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@+id/iv_training_hyper_params_icon"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_model_params_model_value"
+                tools:text="Hyper parameters: " />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_hyper_params_epochs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_hyper_params_header"
+                tools:text="Epochs:" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_hyper_params_learning_rate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_hyper_params_header"
+                tools:text="Learning Rate:" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_hyper_params_epochs_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_hyper_params_epochs"
+                tools:text="Epoch Number" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_hyper_params_learning_rate_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_hyper_params_learning_rate"
+                tools:text="learning rate value" />
+
+            <ImageView
+                android:id="@+id/iv_training_hyper_params_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/machine_learning_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_model_params_model_value" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_item_training_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/iv_training_log_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/machine_learning_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_log_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@+id/iv_training_log_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Log:" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_log_log"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_log_header"
+                tools:text="Log value as received" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_item_training_chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/iv_training_chart_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/machine_learning_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_chart_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toEndOf="@+id/iv_training_chart_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Training Chart:" />
+
+            <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
+                android:id="@+id/chv_training_details_plot"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_chart_header" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

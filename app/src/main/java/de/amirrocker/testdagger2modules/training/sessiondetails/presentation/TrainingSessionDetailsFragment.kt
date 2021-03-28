@@ -73,15 +73,6 @@ class TrainingSessionDetailsFragment : Fragment() {
 
         configureRecyclerView()
 
-        binding.buttonStartTraining.setOnClickListener {
-            viewModel.startNewTraining()
-
-        }
-
-        // use the textfield for now to start the activity.
-        binding.tvRegisterNow.setOnClickListener {
-            startActivity(Intent(activity?.applicationContext, RegistrationActivity::class.java))
-        }
     }
 
     private fun configureRecyclerView() {
