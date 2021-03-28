@@ -56,7 +56,7 @@ class NetworkModule {
     fun provideTrainingService(): TrainingSessionService {
         val httpClient:OkHttpClient.Builder = OkHttpClient.Builder()
         return Retrofit.Builder()
-            .baseUrl("http://DESKTOP-F8S5M89:8081/")
+            .baseUrl("http://DESKTOP-F8S5M89:8081")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(httpClient.build())

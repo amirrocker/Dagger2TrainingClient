@@ -26,11 +26,11 @@ class TrainingSessionCardViewHolder @Inject constructor(
     var chartView: AAChartView
 
     init {
-        title = itemView.findViewById(R.id.tv_item_training_session_title)
+        title = itemView.findViewById(R.id.tv_item_training_details_title)
         date = itemView.findViewById(R.id.tv_item_training_date)
-        user = itemView.findViewById(R.id.tv_item_training_environment)
-        description = itemView.findViewById(R.id.tv_item_training_session_description)
-        version = itemView.findViewById(R.id.tv_item_training_session_version)
+        user = itemView.findViewById(R.id.tv_item_training_details_environment)
+        description = itemView.findViewById(R.id.tv_item_training_details_description)
+        version = itemView.findViewById(R.id.tv_item_training_details_version)
         chartView = itemView.findViewById(R.id.chv_trainings_plot)
     }
 

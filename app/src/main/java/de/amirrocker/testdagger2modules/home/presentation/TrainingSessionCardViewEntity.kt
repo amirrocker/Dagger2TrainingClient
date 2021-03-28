@@ -1,9 +1,8 @@
 package de.amirrocker.testdagger2modules.home.presentation
 
-import android.widget.TextView
 import de.amirrocker.testdagger2modules.home.data.trainingSession.Training
 
-typealias TrainingSessionId = Int
+typealias TrainingSessionId = String
 typealias TrainingSessionCardViewEntityTitle = String
 typealias TrainingSessionCardViewEntityVersion = String
 typealias TrainingSessionCardViewEntityCreatedAt = String
@@ -12,7 +11,7 @@ typealias TrainingSessionCardViewEntityUser = String
 typealias TrainingSessionCardViewEntityDescription = String
 
 class TrainingSessionCardViewEntity(
-    var _id:TrainingSessionId,
+    var _sessionId:TrainingSessionId,
     var _title:TrainingSessionCardViewEntityTitle,
     var _version:TrainingSessionCardViewEntityVersion,
     var _createdAt: TrainingSessionCardViewEntityCreatedAt,
@@ -23,7 +22,7 @@ class TrainingSessionCardViewEntity(
 ) {
 
     fun id(pId:TrainingSessionId): TrainingSessionCardViewEntity {
-        this._id = pId
+        this._sessionId = pId
         return this
     }
 

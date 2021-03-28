@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import de.amirrocker.testdagger2modules.home.data.trainingSession.TrainingSession
 import de.amirrocker.testdagger2modules.home.domain.RetrieveTrainingSessionList
 import de.amirrocker.testdagger2modules.home.presentation.TrainingSessionDisplayableItemMapper
+import de.amirrocker.testdagger2modules.training.sessiondetails.domain.RetrieveSessionBySessionId
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -13,7 +14,7 @@ import javax.inject.Inject
 
 // TODO use a different interactor of course ;)
 class TrainingSessionDetailsFragmentViewModel @Inject constructor(
-    val retrieveTrainingSessionList: RetrieveTrainingSessionList,
+    val retrieveSessionBySessionId: RetrieveSessionBySessionId,
     val trainingSessionDisplayableItemMapper: TrainingSessionDisplayableItemMapper
 ) :ViewModel() {
 
@@ -32,8 +33,8 @@ class TrainingSessionDetailsFragmentViewModel @Inject constructor(
     }
 
     private fun bindToTrainingSessions(): Disposable {
-        return retrieveTrainingSessionList
-            .getBehaviorStream(Option.none())
+        return retrieveSessionBySessionId
+            .getBehaviorStream(Option.ofObj("ID1"))
             .observeOn(Schedulers.computation())
 //            .map(trainingSessionDisplayableItemMapper) // without mapping to entites
             .subscribe(

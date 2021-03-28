@@ -42,7 +42,7 @@
                 android:text="@string/list_item_training_session_header"
                 app:layout_constraintStart_toEndOf="@+id/iv_training_icon"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/list_item_training_session_header" />
+                tools:text="@string/list_item_training_details_header" />
 
             <TextView
                 android:id="@+id/tv_item_training_date"
@@ -64,7 +64,7 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_item_training_header"
-                tools:text="User: CrazyIvan" />
+                tools:text="Environment: PongV4" />
 
             <TextView
                 android:id="@+id/tv_item_training_details_title"
@@ -74,7 +74,7 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_environment"
-                tools:text="Session Title" />
+                tools:text="Training file: CrossEntropy.py" />
 
             <TextView
                 android:id="@+id/tv_item_training_details_version"
@@ -83,7 +83,7 @@
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tv_item_training_details_title"
-                tools:text="Version: 184" />
+                tools:text="Version: 0.1.27" />
 
 
             <TextView
@@ -98,8 +98,44 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_title"
                 tools:text="Long Description Text\nLorem Ipusm non potest" />
 
-            <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
-                android:id="@+id/chv_trainings_plot"
+            <TextView
+                android:id="@+id/tv_item_training_details_createdAt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                tools:text="CreatedAt: 12.12.2020" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_executedAt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                tools:text="ExecutedAt: 12.12.2020" />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_model_params_header"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                tools:text="Model parameters: " />
+
+            <TextView
+                android:id="@+id/tv_item_training_details_model_params_model"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                tools:text="Model: Model" />
+
+           <!-- <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
+                android:id="@+id/chv_training_details_plot"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
@@ -108,7 +144,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_description" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_training_details_description" />-->
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

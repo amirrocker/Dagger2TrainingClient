@@ -11,5 +11,16 @@
         android:label="@string/main_view_fragment_label"
         tools:layout="@layout/fragment_main_view">
 
+        <action
+            android:id="@+id/action_MainViewFragment_to_trainingSessionDetailsFragment"
+            app:destination="@id/trainingSessionDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingSessionDetailsFragment"
+        android:name="de.amirrocker.testdagger2modules.training.sessiondetails.presentation.TrainingSessionDetailsFragment"
+        android:label="TrainingSessionDetailsFragment" >
+        <action
+            android:id="@+id/action_trainingSessionDetailsFragment_to_MainViewFragment"
+            app:destination="@id/MainViewFragment" />
     </fragment>
 </navigation>
