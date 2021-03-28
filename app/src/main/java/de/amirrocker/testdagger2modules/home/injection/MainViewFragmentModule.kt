@@ -21,11 +21,6 @@ import de.amirrocker.testdagger2modules.home.presentation.TrainingSessionConstan
 
 @Module
 abstract class MainViewFragmentModule {
-//class MainViewFragmentModule {
-
-//    @Provides
-//    @Singleton
-//    fun providesStorage(storage:Storage) = InMemoryStorage()
 
     // tells Dagger to use the specific implementation
     // name of method is 'wurscht' - parameter type and return type are what dagger looks at.
@@ -34,39 +29,5 @@ abstract class MainViewFragmentModule {
 
     @Binds
     abstract fun providesItemComparator(itemComparator: MainViewFragmentItemComparator ): ItemComparator
-
-//    @Binds
-//    @IntoMap
-//    @IntKey(TrainingSessionConstants.DisplayableTypes.ACTIVE)
-//    abstract fun providesTrainingSessionCardViewHolderFactory(factory:TrainingSessionCardViewHolder.TrainingSessionCardViewHolderFactory):ViewHolderFactory
-//
-//    @Binds
-//    @IntoMap
-//    @IntKey(TrainingSessionConstants.DisplayableTypes.ACTIVE)
-//    abstract fun providesTrainingSessionCardViewHolderBinder(binder:TrainingSessionCardViewHolder.TrainingSessionCardViewHolderBinder):ViewHolderBinder
-
-
-
-
-//    @Provides
-//    fun providesRecyclerViewAdapter(itemComparator: ItemComparator,
-//                                    factoryMap: Map<Int, ViewHolderFactory>,
-//                                    binderMap: Map<Int, ViewHolderBinder>,
-//                                    androidPrecondition: AndroidPrecondition
-//    ): RecyclerViewAdapter = RecyclerViewAdapter(itemComparator, factoryMap, binderMap, androidPrecondition)
-//
-//    @Provides
-//    fun providesItemComparator():ItemComparator = MainViewFragmentItemComparator()
-
-//    @Provides
-//    fun providesTrainingSessionCardViewHolderFactory(context: Context):ViewHolderFactory {
-//        return TrainingSessionCardViewHolder.TrainingSessionCardViewHolderFactory(context)
-//    }
-//
-//    @Provides
-//    fun providesTrainingSessionCardViewHolderBinder():ViewHolderBinder {
-//        return TrainingSessionCardViewHolder.TrainingSessionCardViewHolderBinder()
-//    }
-
 
 }

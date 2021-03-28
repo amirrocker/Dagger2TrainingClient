@@ -17,15 +17,6 @@ import de.amirrocker.testdagger2modules.home.presentation.TrainingSessionCardVie
 @Module
 class MainViewFragmentViewModelModule {
 
-//    @Provides
-//    @Singleton
-//    fun providesStorage(storage:Storage) = InMemoryStorage()
-
-    // tells Dagger to use the specific implementation
-    // name of method is 'wurscht' - parameter type and return type are what dagger looks at.
-//    @Binds
-//    abstract fun provideViewModelProviderFactory(viewModel:MainViewFragmentViewModel): ViewModelProvider.Factory
-
     @Provides
     fun provideViewModelProviderFactory(viewModelUtil:ViewModelUtil, viewModel:MainViewFragmentViewModel): ViewModelProvider.Factory {
         return viewModelUtil.createFor(viewModel)
@@ -46,6 +37,4 @@ class MainViewFragmentViewModelModule {
     fun providesTrainingSessionCardViewHolderBinder():ViewHolderBinder {
         return TrainingSessionCardViewHolder.TrainingSessionCardViewHolderBinder()
     }
-
-
 }

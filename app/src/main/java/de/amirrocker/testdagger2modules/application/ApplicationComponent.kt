@@ -9,6 +9,7 @@ import de.amirrocker.testdagger2modules.home.injection.MainViewFragmentViewModel
 import de.amirrocker.testdagger2modules.home.presentation.MainViewFragment
 import de.amirrocker.testdagger2modules.login.LoginComponent
 import de.amirrocker.testdagger2modules.registration.RegistrationComponent
+import de.amirrocker.testdagger2modules.training.sessiondetails.presentation.TrainingSessionDetailsFragment
 import javax.inject.Singleton
 
 @Singleton
@@ -36,6 +37,11 @@ interface ApplicationComponent {
      * tell dagger that we want a injection graph for this fragment
      */
     fun inject(mainViewFragment: MainViewFragment)
+
+    /**
+     * tell dagger that we want a injection graph for this fragment
+     */
+    fun inject(trainingSessionDetailsFragment: TrainingSessionDetailsFragment)
 
     fun getRegistrationComponent():RegistrationComponent.Factory
 
