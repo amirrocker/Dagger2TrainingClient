@@ -38,6 +38,7 @@
     <string name="list_item_training_header">Training</string>
 
     <string name="list_item_training_details_header">Training</string>
+    <string name="list_item_training_details_id">ID 10</string>
 
     <!-- Terms and Conditions -->
     <string name="terms_and_conditions_header">Terms &amp; Conditions</string>

@@ -26,8 +26,8 @@ class TrainingSessionDetailsFragment : Fragment() {
     @Inject
     lateinit var adapter: RecyclerViewAdapter
 
-    val viewModel: MainViewFragmentViewModel by lazy {
-        ViewModelProvider(this, viewModelFactory).get(MainViewFragmentViewModel::class.java)
+    val viewModel: TrainingSessionDetailsFragmentViewModel by lazy {
+        ViewModelProvider(this, viewModelFactory).get(TrainingSessionDetailsFragmentViewModel::class.java)
     }
 
     private var _binding: FragmentTrainingSessionDetailsBinding? = null
@@ -60,12 +60,12 @@ class TrainingSessionDetailsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 //        val viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewFragmentViewModel::class.java)
 
-        viewModel.trainingSessionListLiveData.observe(viewLifecycleOwner, this::updateListView)
+        viewModel.trainingSessionListLiveData.observe(viewLifecycleOwner, this::updateView)
 
     }
 
-    private fun updateListView(items:List<TrainingSession>) {
-        adapter.update(items)
+    private fun updateView(items:TrainingSession) {
+        adapter.update(listOf(items))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -76,12 +76,12 @@ class TrainingSessionDetailsFragment : Fragment() {
     }
 
     private fun configureRecyclerView() {
-        binding.recyclerViewTrainingSessionList.layoutManager = LinearLayoutManager(
+        binding.rvTrainingSessionDetailsTrainingsList.layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.HORIZONTAL,
             false
         )
-        binding.recyclerViewTrainingSessionList.adapter = adapter
+        binding.rvTrainingSessionDetailsTrainingsList.adapter = adapter
 
     }
 

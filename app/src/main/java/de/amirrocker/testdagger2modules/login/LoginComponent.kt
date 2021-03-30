@@ -1,10 +1,7 @@
 package de.amirrocker.testdagger2modules.login
 
-import dagger.Component
 import dagger.Subcomponent
-import de.amirrocker.testdagger2modules.application.scope.ActivityScope
-import de.amirrocker.testdagger2modules.registration.EnterDetailsFragment
-import de.amirrocker.testdagger2modules.registration.TermsAndConditionsFragment
+import de.amirrocker.testdagger2modules.base.injection.scopes.ActivityScope
 
 /*
 We can annotate the LoginComponent with ActivityScope since the component will have the same lifetime as LoginActivity.

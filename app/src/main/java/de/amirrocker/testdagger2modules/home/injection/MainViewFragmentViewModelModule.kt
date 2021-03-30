@@ -2,8 +2,12 @@ package de.amirrocker.testdagger2modules.home.injection
 
 import android.content.Context
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import dagger.Module
 import dagger.Provides
+import de.amirrocker.testdagger2modules.base.injection.scopes.ActivityScope
+import de.amirrocker.testdagger2modules.base.presentation.recyclerview.RecyclerViewAdapter
+//import dagger.multibindings.*
 import de.amirrocker.testdagger2modules.base.presentation.recyclerview.ViewHolderBinder
 import de.amirrocker.testdagger2modules.base.presentation.recyclerview.ViewHolderFactory
 import de.amirrocker.testdagger2modules.base.presentation.utils.ViewModelUtil
@@ -29,6 +33,8 @@ class MainViewFragmentViewModelModule {
     fun provideBinderMap(): Map<Int, ViewHolderBinder> = HashMap()
 
     @Provides
+//    @IntoMap
+//    @IntKey(Repository.TYPE_NORMAL)
     fun providesTrainingSessionCardViewHolderFactory(context: Context):ViewHolderFactory {
         return TrainingSessionCardViewHolder.TrainingSessionCardViewHolderFactory(context)
     }
@@ -37,4 +43,10 @@ class MainViewFragmentViewModelModule {
     fun providesTrainingSessionCardViewHolderBinder():ViewHolderBinder {
         return TrainingSessionCardViewHolder.TrainingSessionCardViewHolderBinder()
     }
+
+    @Provides
+    @ActivityScope
+    fun provideRecyclerViewAdapter(onTrainingSessionItemClicked: TrainingSessionCardViewHolder.OnTrainingSessionItemClicked): RecyclerView.Adapter<RecyclerView.ViewHolder> =
+        RecyclerViewAdapter(onTrainingSessionItemClicked)
+
 }

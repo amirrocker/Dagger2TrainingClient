@@ -24,7 +24,7 @@ class TrainingSessionDetailsFragmentViewModel @Inject constructor(
         CompositeDisposable()
     }
 
-    val trainingSessionListLiveData: MutableLiveData<List<TrainingSession>> by lazy {
+    val trainingSessionListLiveData: MutableLiveData<TrainingSession> by lazy {
         MutableLiveData()
     }
 

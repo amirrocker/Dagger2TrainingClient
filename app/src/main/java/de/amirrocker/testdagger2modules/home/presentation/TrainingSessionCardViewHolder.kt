@@ -11,6 +11,7 @@ import de.amirrocker.testdagger2modules.R
 import de.amirrocker.testdagger2modules.base.presentation.recyclerview.DisplayableItem
 import de.amirrocker.testdagger2modules.base.presentation.recyclerview.ViewHolderBinder
 import de.amirrocker.testdagger2modules.base.presentation.recyclerview.ViewHolderFactory
+import de.amirrocker.testdagger2modules.home.data.trainingSession.TrainingSession
 import javax.inject.Inject
 
 class TrainingSessionCardViewHolder @Inject constructor(
@@ -59,6 +60,7 @@ class TrainingSessionCardViewHolder @Inject constructor(
 
 //        chartView.aa_drawChartWithChartModel(chartModel)
         chartView.aa_drawChartWithChartOptions(chartOptions = aaChartOptions)
+
     }
 
     fun bind(viewEntity: TrainingSessionCardViewEntity) {
@@ -92,6 +94,10 @@ class TrainingSessionCardViewHolder @Inject constructor(
             val itemEntity = TrainingSessionCardViewEntity::class.java.cast(item._model)
             trainingSessionCardViewHolder.bind(itemEntity)
         }
+    }
+
+    interface OnTrainingSessionItemClicked {
+        fun onTrainingSessionSelected(trainingSession:TrainingSession)
     }
 
 

@@ -13,13 +13,23 @@
         android:orientation="vertical"
         >
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Training Session Overview:"
+            tools:text="Training Session Overview:"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            />
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
-            >
+            app:cardElevation="4dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -27,14 +37,24 @@
                 tools:context=".home.presentation.MainViewFragment">
 
 
+                <ImageView
+                    android:id="@+id/iv_training_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/machine_learning_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
                     android:id="@+id/training_session_details_header"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:text="Training Session Details"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iv_training_icon"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="Training Session Details" />
 
@@ -42,46 +62,108 @@
                     android:id="@+id/tv_training_session_details_sessionId"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:text="SessionID: "
+                    app:layout_constraintTop_toBottomOf="@+id/training_session_details_header"
                     tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="48dp"
                     tools:text="SessionID:" />
 
                 <TextView
                     android:id="@+id/tv_training_session_details_sessionId_value"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:text="ID10"
-                    tools:layout_editor_absoluteX="137dp"
-                    tools:layout_editor_absoluteY="48dp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_training_session_details_sessionId"
+                    app:layout_constraintTop_toTopOf="@+id/tv_training_session_details_sessionId"
                     tools:text="ID10" />
 
                 <TextView
                     android:id="@+id/training_session_details_user"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
                     android:text="User:"
-                    tools:layout_editor_absoluteX="238dp"
-                    tools:layout_editor_absoluteY="48dp"
+                    app:layout_constraintEnd_toStartOf="@+id/training_session_details_user_value"
+                    app:layout_constraintTop_toTopOf="@+id/tv_training_session_details_sessionId_value"
                     tools:text="User:" />
 
                 <TextView
                     android:id="@+id/training_session_details_user_value"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
                     android:text="ID10-User"
-                    tools:layout_editor_absoluteX="317dp"
-                    tools:layout_editor_absoluteY="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/training_session_details_user"
                     tools:text="ID10-User" />
 
                 <TextView
                     android:id="@+id/tv_training_session_details_title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
                     android:text="Title: "
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="114dp"
-                    tools:text="Title" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_training_session_details_sessionId"
+                    tools:text="Title:" />
+
+                <TextView
+                    android:id="@+id/tv_training_session_details_title_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Training # 1"
+                    app:layout_constraintStart_toEndOf="@+id/tv_training_session_details_title"
+                    app:layout_constraintTop_toTopOf="@+id/tv_training_session_details_title"
+                    tools:text="Training #1" />
+
+                <TextView
+                    android:id="@+id/tv_training_session_details_createdAt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="CreatedAt "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/training_session_details_user_value"
+                    tools:text="CreatedAt" />
+
+                <TextView
+                    android:id="@+id/tv_training_session_details_createdAt_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="12.12.1212: "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_training_session_details_createdAt"
+                    tools:text="12.12.1212" />
+
+                <TextView
+                    android:id="@+id/tv_training_session_details_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Description: "
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_training_session_details_title"
+                    tools:text="Description:" />
+
+                <TextView
+                    android:id="@+id/tv_training_session_details_description_value"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Description: "
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_training_session_details_description"
+                    tools:text="Description Value is some long text. It spans multiple lines\nand then should be transferred to a resource string." />
 
                 <!-- <androidx.recyclerview.widget.RecyclerView
                      android:id="@+id/recycler_view_training_session_trainings_list"
@@ -111,16 +193,31 @@
                 android:layout_height="match_parent"
                 tools:context=".home.presentation.MainViewFragment">
 
+                <TextView
+                    android:id="@+id/tv_training_session_training_list_header"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="All Trainings"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="All Trainings" />
+
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view_training_session_trainings_list"
+                    android:id="@+id/rv_training_session_details_trainings_list"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_training_session_training_list_header"
+                    app:layout_constraintVertical_bias="0.735"
                     tools:listitem="@layout/item_list_item_training_details"></androidx.recyclerview.widget.RecyclerView>
 
 

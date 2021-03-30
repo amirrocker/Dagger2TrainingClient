@@ -9,7 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import de.amirrocker.testdagger2modules.R
 import de.amirrocker.testdagger2modules.application.TestDagger2ModulesApplication
 import de.amirrocker.testdagger2modules.base.presentation.recyclerview.RecyclerViewAdapter
 import de.amirrocker.testdagger2modules.databinding.FragmentMainViewBinding
@@ -60,10 +62,16 @@ class MainViewFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-//        val viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewFragmentViewModel::class.java)
+//        viewModel.onItemSelectedLiveData.observe(viewLifecycleOwner, this::navigateToNextTarget)
+        viewModel.trainingSessionListLiveData.observeForever(this::updateListView)
+    }
 
-        viewModel.trainingSessionListLiveData.observe(viewLifecycleOwner, this::updateListView)
-
+    private fun navigateToNextTarget(trainingSession: List<TrainingSession>) {
+        val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment_content_main)
+        val navController = navHostFragment?.findNavController()
+        navController?.let {
+            it.navigate(R.id.action_MainViewFragment_to_trainingSessionDetailsFragment)
+        }
     }
 
     private fun updateListView(items:List<TrainingSession>) {
@@ -77,7 +85,6 @@ class MainViewFragment : Fragment() {
 
         binding.buttonStartTraining.setOnClickListener {
             viewModel.startNewTraining()
-
         }
 
         // use the textfield for now to start the activity.
@@ -95,7 +102,6 @@ class MainViewFragment : Fragment() {
         binding.recyclerViewTrainingSessionList.adapter = adapter
 
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -42,6 +42,16 @@
                 tools:text="@string/list_item_training_details_header" />
 
             <TextView
+                android:id="@+id/tv_item_training_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/list_item_training_details_id"
+                app:layout_constraintStart_toEndOf="@+id/tv_item_training_header"
+                app:layout_constraintTop_toTopOf="@+id/tv_item_training_header"
+                tools:text="@string/list_item_training_details_id" />
+
+            <TextView
                 android:id="@+id/tv_item_training_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -1,6 +1,6 @@
 package de.amirrocker.testdagger2modules.registration
 
-import de.amirrocker.testdagger2modules.application.scope.ActivityScope
+import de.amirrocker.testdagger2modules.base.injection.scopes.ActivityScope
 import de.amirrocker.testdagger2modules.home.data.account.UserManager
 import javax.inject.Inject
 

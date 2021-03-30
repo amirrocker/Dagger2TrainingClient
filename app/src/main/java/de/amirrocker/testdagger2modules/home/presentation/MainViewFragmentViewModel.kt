@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import de.amirrocker.testdagger2modules.home.data.trainingSession.TrainingSession
 import de.amirrocker.testdagger2modules.home.domain.RetrieveTrainingSessionList
 import de.amirrocker.testdagger2modules.registration.RegistrationActivity
+import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -17,7 +18,7 @@ import javax.inject.Inject
 class MainViewFragmentViewModel @Inject constructor(
     val retrieveTrainingSessionList: RetrieveTrainingSessionList,
     val trainingSessionDisplayableItemMapper: TrainingSessionDisplayableItemMapper
-) :ViewModel() {
+) :ViewModel(), TrainingSessionCardViewHolder.OnTrainingSessionItemClicked {
 
     val TAG = MainViewFragmentViewModel::class.java.simpleName
 
@@ -26,6 +27,10 @@ class MainViewFragmentViewModel @Inject constructor(
     }
 
     val trainingSessionListLiveData: MutableLiveData<List<TrainingSession>> by lazy {
+        MutableLiveData()
+    }
+
+    val onItemSelectedLiveData: MutableLiveData<List<TrainingSession>> by lazy {
         MutableLiveData()
     }
 
@@ -62,4 +67,13 @@ class MainViewFragmentViewModel @Inject constructor(
         println("starting a new training in the existing session")
     }
 
+    override fun onTrainingSessionSelected(trainingSession: TrainingSession) {
+        println("OnTrainingSessionSelected: $trainingSession")
+
+        compositeDisposable.add(Observable.just(listOf(trainingSession))
+            .observeOn(Schedulers.computation())
+            .subscribe {
+                onItemSelectedLiveData.postValue(it)
+            })
+    }
 }

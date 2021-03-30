@@ -1,7 +1,7 @@
 package de.amirrocker.testdagger2modules.registration
 
 import dagger.Subcomponent
-import de.amirrocker.testdagger2modules.application.scope.ActivityScope
+import de.amirrocker.testdagger2modules.base.injection.scopes.ActivityScope
 
 /**
  * Now that both Types have received the same @Scope - this component will
