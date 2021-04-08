@@ -34,9 +34,9 @@ https://developer.android.com/codelabs/android-dagger#10
 1. Google introduces API for faster Kotlin builds - Recherche! 
 https://koliasa.com/google-introduces-api-for-faster-kotlin-builds/
 
-....
+### A bit about scoping and scoping rules in dagger 2:
 
-11. Scoping Subcomponents
+1. Scoping Subcomponents
 We created a subcomponent because we needed to share the same instance of RegistrationViewModel 
 between the Activity and Fragments. <b>As we did before, if we annotate the Component and classes 
 with the same scope annotation, that'll make that typehave a unique instance in the Component.</b>
@@ -44,7 +44,7 @@ with the same scope annotation, that'll make that typehave a unique instance in 
 However, we cannot use @Singleton because it's already been used by AppComponent. 
 We need to create a different one.
 
-Scoping rules:
+2. Scoping rules:
 
 - <b>When a type is marked with a scope annotation, it can only be used by Components that are 
 annotated with the same scope.</b>
@@ -54,3 +54,4 @@ annotation or types that have no annotation.
 
 Components also involve subcomponents in this context.
 
+### WIP .....
